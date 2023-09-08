@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enrollment Form</title>
+  </head>
+  <body>
+    <center><h1>Enrollment Form</h1></center>
+    <hr />
+    <form action="./ThankYou.html" method="post">
+      <fieldset>
+        <legend>
+          <b><i>One step towards a brighter future</i></b>
+        </legend>
+        <table
+          align="center"
+          width="500px"
+          border="2px"
+          cellspacing="0"
+          cellpadding="10"
+        >
+          <tr>
+            <td>Name</td>
+            <td><input required="text" name="studentname" id="name" /></td>
+          </tr>
+
+          <tr>
+            <td>Email</td>
+            <td><input required="email" name="email" id="email" /></td>
+          </tr>
+          <tr>
+            <td>Gender</td>
+            <td>
+              <input type="radio" name="gender" id="gender" />Male
+              <input type="radio" name="gender" id="gender" />Female
+            </td>
+          </tr>
+          <tr>
+            <td>Phone</td>
+            <td><input required="text" /></td>
+          </tr>
+          <tr>
+            <td>Qualification</td>
+            <td>
+              <select required="qualification" id="qual">
+                <option value="">Select</option>
+                <option value="Graduation">Graduation</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Matriculation">Matriculation</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Course</td>
+            <td>
+              <input type="radio" name="course" id="JavaFSD" />Java Dev
+              <input type="radio" name="course" id="pythonFSD" />MEAN
+              <input type="radio" name="course" id="mern" />MERN
+            </td>
+          </tr>
+          <tr></tr>
+
+          <tr>
+            <td>Country</td>
+            <td>
+              <select required>
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="Australia">Australia</option>
+                <option value="Austria">Austria</option>
+                <option value="Russia">Russia</option>
+                <option value="Nepal">Nepal</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Address</td>
+            <td>
+              <textarea
+                required
+                name="address"
+                id="address"
+                cols="52"
+                rows="10"
+              ></textarea>
+            </td>
+          </tr>
+
+          <tr>
+            <td><input type="submit" value="Submit" /></td>
+          </tr>
+        </table>
+      </fieldset>
+    </form>
+  </body>
+</html>
