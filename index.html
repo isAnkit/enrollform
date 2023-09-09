@@ -3,12 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <meta property="og:title" content="HTML Form"/>  
+    <meta property="og:description" content="Simple HTML Enrollment Form"/>  
     <title>Enrollment Form</title>
   </head>
   <body>
     <center><h1>Enrollment Form</h1></center>
     <hr />
-    <form action="./ThankYou.html" method="post">
+    <form action="./script.php" method="post">
       <fieldset>
         <legend>
           <b><i>One step towards a brighter future</i></b>
@@ -32,8 +34,8 @@
           <tr>
             <td>Gender</td>
             <td>
-              <input type="radio" name="gender" id="gender" />Male
-              <input type="radio" name="gender" id="gender" />Female
+              <input type="radio" name="gender" id="gender" value="Male"/>Male
+              <input type="radio" name="gender" id="gender" value="Female" />Female
             </td>
           </tr>
           <tr>
@@ -54,9 +56,9 @@
           <tr>
             <td>Course</td>
             <td>
-              <input type="radio" name="course" id="JavaFSD" />Java Dev
-              <input type="radio" name="course" id="pythonFSD" />MEAN
-              <input type="radio" name="course" id="mern" />MERN
+                  <input type="radio" name="course" id="JavaFSD" value="Java Dev" />Java Dev
+                 <input type="radio" name="course" id="pythonFSD" value="MEAN" />MEAN
+                <input type="radio" name="course" id="mern" value="MERN" />MERN
             </td>
           </tr>
           <tr></tr>
@@ -64,14 +66,14 @@
           <tr>
             <td>Country</td>
             <td>
-              <select required>
-                <option value="India" name="country" id="country">India</option>
-                <option value="USA" name="country" id="country">USA</option>
-                <option value="Australia" name="country" id="country">Australia</option>
-                <option value="Austria" name="country" id="country">Austria</option>
-                <option value="Russia" name="country" id="country">Russia</option>
-                <option value="Nepal" name="country" id="country">Nepal</option>
-              </select>
+              <select required name="country" id="country">
+      <option value="India">India</option>
+      <option value="USA">USA</option>
+      <option value="Australia">Australia</option>
+      <option value="Austria">Austria</option>
+      <option value="Russia">Russia</option>
+      <option value="Nepal">Nepal</option>
+    </select>
             </td>
           </tr>
           <tr>
@@ -93,29 +95,7 @@
         </table>
       </fieldset>
     </form>
-<?php
-if(isset($_POST['submit'])){
-   $studentname = "Name: ".$_POST['studentname']."\n";
-   $email = "Email: ".$_POST['email']."\n";
-   $gender = "Gender: ".$_POST['gender']."\n";
-   $phone = "Phone: ".$_POST['phone']."\n";
-   $qualification = "Qualification: ".$_POST['qualification']."\n";
-   $course = "Course: ".$_POST['course']."\n";
-   $country = "Country: ".$_POST['country']."\n";
-   $address = "Address: ".$_POST['address']."\n";
 
-   $file = fopen("file.txt", "a");
-   fwrite($file, $studentname);
-   fwrite($file, $email);
-   fwrite($file, $gender);
-   fwrite($file, $phone);
-   fwrite($file, $qualification);
-   fwrite($file, $course);
-   fwrite($file, $country);
-   fwrite($file, $address);
-   fclose($file);
-}
-?>
 
   </body>
 </html>
