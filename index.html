@@ -22,12 +22,12 @@
         >
           <tr>
             <td>Name</td>
-            <td><input required="text" name="studentname" id="name" /></td>
+            <td><input required type="text" name="studentname" id="name" /></td>
           </tr>
 
           <tr>
             <td>Email</td>
-            <td><input required="email" name="email" id="email" /></td>
+            <td><input required type="email" name="email" id="email" /></td>
           </tr>
           <tr>
             <td>Gender</td>
@@ -38,12 +38,12 @@
           </tr>
           <tr>
             <td>Phone</td>
-            <td><input required="text" /></td>
+            <td><input required type="tel" name="phone" id="phone" /></td>
           </tr>
           <tr>
             <td>Qualification</td>
             <td>
-              <select required="qualification" id="qual">
+              <select required name="qualification" id="qual">
                 <option value="">Select</option>
                 <option value="Graduation">Graduation</option>
                 <option value="Intermediate">Intermediate</option>
@@ -65,12 +65,12 @@
             <td>Country</td>
             <td>
               <select required>
-                <option value="India">India</option>
-                <option value="USA">USA</option>
-                <option value="Australia">Australia</option>
-                <option value="Austria">Austria</option>
-                <option value="Russia">Russia</option>
-                <option value="Nepal">Nepal</option>
+                <option value="India" name="country" id="country">India</option>
+                <option value="USA" name="country" id="country">USA</option>
+                <option value="Australia" name="country" id="country">Australia</option>
+                <option value="Austria" name="country" id="country">Austria</option>
+                <option value="Russia" name="country" id="country">Russia</option>
+                <option value="Nepal" name="country" id="country">Nepal</option>
               </select>
             </td>
           </tr>
@@ -88,10 +88,34 @@
           </tr>
 
           <tr>
-            <td><input type="submit" value="Submit" /></td>
+            <td><input type="submit" name="submit" value="Submit" /></td>
           </tr>
         </table>
       </fieldset>
     </form>
+<?php
+if(isset($_POST['submit'])){
+   $studentname = "Name: ".$_POST['studentname']."\n";
+   $email = "Email: ".$_POST['email']."\n";
+   $gender = "Gender: ".$_POST['gender']."\n";
+   $phone = "Phone: ".$_POST['phone']."\n";
+   $qualification = "Qualification: ".$_POST['qualification']."\n";
+   $course = "Course: ".$_POST['course']."\n";
+   $country = "Country: ".$_POST['country']."\n";
+   $address = "Address: ".$_POST['address']."\n";
+
+   $file = fopen("file.txt", "a");
+   fwrite($file, $studentname);
+   fwrite($file, $email);
+   fwrite($file, $gender);
+   fwrite($file, $phone);
+   fwrite($file, $qualification);
+   fwrite($file, $course);
+   fwrite($file, $country);
+   fwrite($file, $address);
+   fclose($file);
+}
+?>
+
   </body>
 </html>
